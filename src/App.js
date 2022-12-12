@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import { Main, Navbar, Sidebar } from "./components";
+
+const App = () => {
+  const [showSideBar, setShowSideBar] = useState(true);
+  const [isDarkmode, setIsDarkmode] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar
+        showSideBar={showSideBar}
+        setShowSideBar={setShowSideBar}
+        isDarkmode={isDarkmode}
+        setIsDarkmode={setIsDarkmode}
+      />
+      <div
+        className={`flex pt-[80px] h-screen overflow-hidden ${
+          isDarkmode ? "bg-[#071739]" : "bg-[#F8F8F8]"
+        }`}
+      >
+        <Sidebar showSideBar={showSideBar} isDarkmode={isDarkmode} />
+        <Main isDarkmode={isDarkmode} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
