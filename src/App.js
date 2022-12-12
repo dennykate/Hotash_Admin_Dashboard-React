@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Main, Navbar, Sidebar } from "./components";
 
 const App = () => {
   const [showSideBar, setShowSideBar] = useState(true);
-  const [isDarkmode, setIsDarkmode] = useState(false);
+  const [isDarkmode, setIsDarkmode] = useState(true);
 
   return (
     <div>
