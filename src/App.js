@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Main, Navbar, Sidebar } from "./components";
 
 const App = () => {
-  const [showSideBar, setShowSideBar] = useState(true);
+  const [showSideBar, setShowSideBar] = useState(false);
   const [isDarkmode, setIsDarkmode] = useState(true);
 
   return (
